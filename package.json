@@ -29,7 +29,7 @@
     "gatsby-plugin-offline": "2.0.9",
     "gatsby-plugin-react-helmet": "3.0.0",
     "gatsby-source-graphcms": "1.0.0-alpha.3",
-    "gatsby-transformer-remark": "2.1.8",
+    "gatsby-transformer-remark": "2.1.9",
     "react": "16.6.0",
     "react-dom": "16.6.0",
     "react-helmet": "5.2.0",
