@@ -1,0 +1,11 @@
+[build]
+  command = "gatsby build"
+  publish = "public"
+
+[build.environment]
+  NODE_ENV = "production"
+  NODE_VERSION = "--lts"
+  NPM_VERSION = "6.9.0"
+  RUBY_VERSION = "default"
+  YARN_FLAGS = "--no-ignore-optional"
+  YARN_VERSION = "1.15.2"
