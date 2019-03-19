@@ -1,294 +1,280 @@
-import React, { Component } from "react";
+import React from "react";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout";
 import StarRatingComponent from "react-star-rating-component";
 
-class IndexPage extends Component {
-  render() {
-    const artists = this.props.data.artists.edges;
-    const records = this.props.data.records.edges;
-    const reviews = this.props.data.reviews.edges;
-    return (
-      <Layout>
-        <div style={{ marginBottom: `5rem` }}>
-          <section className="artists" style={{ textAlign: `center` }}>
-            <p>
-              Welcome to your new
-              {` `}
-              <a href="https://github.com/GraphCMS/gatsby-graphcms-example">
-                Gatsby example site
-              </a>
-              {` `}
-              using the
-              {` `}
-              <a href="https://github.com/GraphCMS/gatsby-source-graphcms">
-                GraphCMS source plugin
-              </a>
-              .
-            </p>
-            <h2>
-              <Link to="/artists">Artists</Link>
-            </h2>
-            <nav>
-              <ul
-                style={{
-                  listStyle: `none`,
-                  margin: `0 0 2rem`,
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  alignItems: `center`,
-                  justifyContent: `center`,
-                  width: `100%`
-                }}
-              >
-                {artists.map(({ node }, i) => (
-                  <li
-                    key={node.id + `nav`}
+export default ({ data }) => {
+  const artists = data.vb.artists;
+  const records = data.vb.records;
+  const reviews = data.vb.reviews;
+  return (
+    <Layout>
+      <div style={{ marginBottom: `5rem` }}>
+        <section className="intro">
+          <p>
+            Welcome to the Vinylbase{` `}
+            <a href="https://github.com/rdela/gatsby-graphcms-rd">
+              Gatsby example site
+            </a>
+            {` `}using{` `}
+            <a href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql">
+              gatsby-source-graphql
+            </a>
+            {` `}and{` `}
+            <a href="https://graphcms.com/">GraphCMS</a>.
+          </p>
+        </section>
+        <section className="artists">
+          <h2>
+            <Link to="/artists">Artists</Link>
+          </h2>
+          <nav>
+            <ul
+              style={{
+                listStyle: `none`,
+                margin: `0 0 2rem`,
+                display: `flex`,
+                flexWrap: `wrap`,
+                alignItems: `center`,
+                justifyContent: `center`,
+                width: `100%`
+              }}
+            >
+              {artists.map((artist, i) => (
+                <li
+                  key={i}
+                  style={{
+                    marginBottom: `0.5rem`,
+                    width: `128px`,
+                    flexBasis: `128px`
+                  }}
+                >
+                  <Link
+                    to={`/artists/` + artist.slug}
                     style={{
-                      marginBottom: `0.5rem`,
-                      width: `128px`,
-                      flexBasis: `128px`
+                      textDecoration: `none`
                     }}
                   >
-                    <Link
-                      to={`/artists/` + node.slug}
-                      style={{
-                        textDecoration: `none`
-                      }}
-                    >
-                      <figure>
-                        <img
-                          src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${
-                            node.picture.handle
-                          }`}
-                          alt={node.name}
-                          title={node.name}
-                          width="112"
-                          style={{
-                            marginBottom: `0`,
-                            marginTop: `0.125rem`
-                          }}
-                        />
-                        <figcaption>
-                          <h6
-                            style={{
-                              marginBottom: `0.125rem`,
-                              marginTop: `0`,
-                              fontSize: `0.5675rem`
-                            }}
-                          >
-                            {node.name}
-                          </h6>
-                        </figcaption>
-                      </figure>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </section>
-          <section className="records" style={{ textAlign: `center` }}>
-            <h2>
-              <Link to="/records">Records</Link>
-            </h2>
-            <nav>
-              <ul
-                style={{
-                  listStyle: `none`,
-                  margin: `0 0 2rem`,
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  alignItems: `center`,
-                  justifyContent: `center`,
-                  width: `100%`
-                }}
-              >
-                {records.map(({ node }, i) => (
-                  <li
-                    key={node.id + `nav`}
-                    style={{
-                      marginBottom: `0.5rem`,
-                      width: `128px`,
-                      flexBasis: `128px`
-                    }}
-                  >
-                    <Link
-                      to={`/records/` + node.slug}
-                      style={{
-                        textDecoration: `none`
-                      }}
-                    >
-                      <figure>
-                        <img
-                          src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:crop/${
-                            node.cover.handle
-                          }`}
-                          alt={node.title}
-                          title={node.title}
-                          width="112"
-                          style={{
-                            marginBottom: `0`,
-                            marginTop: `0.125rem`
-                          }}
-                        />
-                        <figcaption>
-                          <h6
-                            style={{
-                              marginBottom: `0.125rem`,
-                              marginTop: `0`,
-                              fontSize: `0.5675rem`
-                            }}
-                          >
-                            {node.title}
-                          </h6>
-                        </figcaption>
-                      </figure>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </section>
-          <section className="reviews" style={{ textAlign: `center` }}>
-            <h2>
-              <Link to="/reviews">Reviews</Link>
-            </h2>
-            <nav>
-              <ul
-                style={{ listStyle: `none`, margin: `0 0 2rem`, width: `100%` }}
-              >
-                {reviews.map(({ node }, i) => (
-                  <li
-                    key={node.id + `nav`}
-                    style={{
-                      marginBottom: `2rem`
-                    }}
-                  >
-                    <h3
-                      style={{
-                        marginBottom: `0.125rem`,
-                        marginTop: `0`
-                      }}
-                    >
-                      <Link
-                        to={`/reviews/` + node.slug}
+                    <figure>
+                      <img
+                        src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${
+                          artist.picture.handle
+                        }`}
+                        alt={artist.name}
+                        title={artist.name}
+                        width="112"
                         style={{
-                          textDecoration: `none`
+                          marginBottom: `0`,
+                          marginTop: `0.125rem`
                         }}
-                      >
-                        {node.title}
-                      </Link>
-                    </h3>
+                      />
+                      <figcaption>
+                        <h6
+                          style={{
+                            marginBottom: `0.125rem`,
+                            marginTop: `0`,
+                            fontSize: `0.5675rem`
+                          }}
+                        >
+                          {artist.name}
+                        </h6>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </section>
+        <section className="records">
+          <h2>
+            <Link to="/records">Records</Link>
+          </h2>
+          <nav>
+            <ul
+              style={{
+                listStyle: `none`,
+                margin: `0 0 2rem`,
+                display: `flex`,
+                flexWrap: `wrap`,
+                alignItems: `center`,
+                justifyContent: `center`,
+                width: `100%`
+              }}
+            >
+              {records.map((record, i) => (
+                <li
+                  key={i}
+                  style={{
+                    marginBottom: `0.5rem`,
+                    width: `128px`,
+                    flexBasis: `128px`
+                  }}
+                >
+                  <Link
+                    to={`/records/` + record.slug}
+                    style={{
+                      textDecoration: `none`
+                    }}
+                  >
+                    <figure>
+                      <img
+                        src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:crop/${
+                          record.cover.handle
+                        }`}
+                        alt={record.title}
+                        title={record.title}
+                        width="112"
+                        style={{
+                          marginBottom: `0`,
+                          marginTop: `0.125rem`
+                        }}
+                      />
+                      <figcaption>
+                        <h6
+                          style={{
+                            marginBottom: `0.125rem`,
+                            marginTop: `0`,
+                            fontSize: `0.5675rem`
+                          }}
+                        >
+                          {record.title}
+                        </h6>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </section>
+        <section className="reviews">
+          <h2>
+            <Link to="/reviews">Reviews</Link>
+          </h2>
+          <nav>
+            <ul
+              style={{ listStyle: `none`, margin: `0 0 2rem`, width: `100%` }}
+            >
+              {reviews.map((review, i) => (
+                <li
+                  key={i}
+                  style={{
+                    marginBottom: `2rem`
+                  }}
+                >
+                  <h3
+                    style={{
+                      marginBottom: `0.125rem`,
+                      marginTop: `0`
+                    }}
+                  >
+                    <Link
+                      to={`/reviews/` + review.slug}
+                      style={{
+                        textDecoration: `none`
+                      }}
+                    >
+                      {review.title}
+                    </Link>
+                  </h3>
 
-                    <p>
-                      for{" "}
-                      <Link to={`/records/${node.record.slug}`}>
-                        <em>{node.record.title}</em>
-                      </Link>
-                      {` `}
-                      by
-                      {` `}
-                      <Link to={`/artists/${node.record.artist.slug}`}>
-                        <strong>{node.record.artist.name}</strong>
-                      </Link>
-                    </p>
-                    {node.rating && (
-                      <div
-                        className="star-wrapper small"
-                        style={{ fontSize: `0.5rem`, marginBottom: `2rem` }}
-                      >
-                        <StarRatingComponent
-                          name="Rating"
-                          className="rating"
-                          starCount={5}
-                          value={node.rating}
-                          editing={false}
-                        />
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </section>
-        </div>
-      </Layout>
-    );
-  }
-}
+                  <p>
+                    for{" "}
+                    <Link to={`/records/${review.record.slug}`}>
+                      <em>{review.record.title}</em>
+                    </Link>
+                    {` `}
+                    by
+                    {` `}
+                    <Link to={`/artists/${review.record.artist.slug}`}>
+                      <strong>{review.record.artist.name}</strong>
+                    </Link>
+                  </p>
+                  {review.rating && (
+                    <div
+                      className="star-wrapper small"
+                      style={{ fontSize: `0.5rem`, marginBottom: `2rem` }}
+                    >
+                      <StarRatingComponent
+                        name="Rating"
+                        className="rating"
+                        starCount={5}
+                        value={review.rating}
+                        editing={false}
+                      />
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </section>
+      </div>
+    </Layout>
+  );
+};
 
-export default IndexPage;
-
-export const pageQuery = graphql`
+export const indexPageQuery = graphql`
   query getAllArtistsRecordsReviews {
-    artists: allArtist {
-      edges {
-        node {
+    vb {
+      artists: allArtists {
+        id
+        name
+        slug
+        picture {
           id
-          name
+          handle
+          width
+          height
+        }
+        records {
+          id
           slug
-          picture {
-            id
-            handle
-            width
-            height
-          }
-          records {
-            id
-            slug
-            title
-          }
+          title
         }
       }
-    }
-    records: allRecord {
-      edges {
-        node {
+      records: allRecords {
+        id
+        slug
+        title
+        artist {
           id
+          slug
+          name
+        }
+        tracks {
+          id
+          title
+          length
+        }
+        cover {
+          handle
+        }
+        reviews {
+          id
+          slug
+          title
+        }
+      }
+      reviews: allReviews {
+        id
+        slug
+        createdAt
+        record {
           slug
           title
           artist {
-            id
             slug
             name
           }
-          tracks {
-            id
-            title
-            aliasedLength
-          }
-          cover {
-            handle
-          }
-          reviews {
-            id
-            slug
-            title
-          }
         }
-      }
-    }
-    reviews: allReview {
-      edges {
-        node {
-          id
-          slug
-          createdAt
-          record {
-            slug
-            title
-            artist {
-              slug
-              name
-            }
-          }
-          title
-          review
-          rating
-          comments {
-            body
-          }
+        title
+        review
+        rating
+        comments {
+          body
         }
       }
     }

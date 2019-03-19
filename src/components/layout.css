@@ -625,6 +625,10 @@ pre tt:after {
   content: '';
 }
 
+section {
+  text-align: center;
+}
+
 .dv-star-rating {
   padding: 0.6875rem 0.75rem;
   background-color: #361b50;
