@@ -1,80 +1,41 @@
 const path = require(`path`);
 const queryAll = require(`./gatsby/queryAll.js`);
+const {
+  makeArtistPath,
+  makeRecordPath,
+  makeReviewPath
+} = require(`./src/utils`);
 
-exports.onCreateNode = ({ node, actions }) => {
-  const { createNode } = actions;
-  if (node.internal.type === `Review`) {
-    createNode({
-      id: `md-${node.id}`,
-      parent: node.id,
-      children: [],
-      internal: {
-        type: `${node.internal.type}Markdown`,
-        mediaType: `text/markdown`,
-        content: node.review,
-        contentDigest: node.internal.contentDigest
+exports.createPages = async ({ actions, graphql }) => {
+  const { data } = await graphql(queryAll);
+
+  data.vb.allArtists.forEach(artist => {
+    actions.createPage({
+      path: makeArtistPath(artist),
+      component: path.resolve(`./src/templates/artist-detail.js`),
+      context: {
+        artistID: artist.id
       }
     });
-  }
-};
+  });
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  data.vb.allRecords.forEach(record => {
+    actions.createPage({
+      path: makeRecordPath(record),
+      component: path.resolve(`./src/templates/record-detail.js`),
+      context: {
+        recordID: record.id
+      }
+    });
+  });
 
-  return new Promise((resolve, reject) => {
-    const artistDetailPageTemplate = path.resolve(
-      `./src/templates/artist-detail.js`
-    );
-    const recordDetailPageTemplate = path.resolve(
-      `./src/templates/record-detail.js`
-    );
-    const reviewDetailPageTemplate = path.resolve(
-      `./src/templates/review-detail.js`
-    );
-
-    resolve(
-      graphql(queryAll).then(result => {
-        if (result.errors) {
-          reject(result.errors);
-        }
-
-        const artists = result.data.allArtist.edges;
-        artists.forEach(({ artist }) => {
-          const path = `artists/` + artist.slug;
-          createPage({
-            path,
-            component: artistDetailPageTemplate,
-            context: {
-              id: artist.id
-            }
-          });
-        });
-
-        const records = result.data.allRecord.edges;
-        records.forEach(({ record }) => {
-          const path = `records/` + record.slug;
-          createPage({
-            path,
-            component: recordDetailPageTemplate,
-            context: {
-              id: record.id
-            }
-          });
-        });
-
-        const reviews = result.data.allReview.edges;
-        reviews.forEach(({ review }) => {
-          const path = `reviews/` + review.slug;
-          createPage({
-            path,
-            component: reviewDetailPageTemplate,
-            context: {
-              id: review.id,
-              mdid: `md-` + review.id
-            }
-          });
-        });
-      })
-    );
+  data.vb.allReviews.forEach(review => {
+    actions.createPage({
+      path: makeReviewPath(review),
+      component: path.resolve(`./src/templates/review-detail.js`),
+      context: {
+        reviewID: review.id
+      }
+    });
   });
 };

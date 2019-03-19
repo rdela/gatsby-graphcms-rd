@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout";
+import BackToIndex from "../components/back-to-index";
 
-class ArtistPage extends Component {
-  render() {
-    const artists = this.props.data.artists.edges;
-    return (
-      <Layout>
-        <section className="artists" style={{ textAlign: `center` }}>
+export default ({ data }) => {
+  const artists = data.vb.artists;
+  return (
+    <Layout>
+      <div style={{ marginBottom: `5rem` }}>
+        <section className="artists">
           <h1>Artists</h1>
           <nav>
             <ul
@@ -22,9 +23,9 @@ class ArtistPage extends Component {
                 width: `100%`
               }}
             >
-              {artists.map(({ node }, i) => (
+              {artists.map((artist, i) => (
                 <li
-                  key={node.id + `nav`}
+                  key={i}
                   style={{
                     marginBottom: `0.5rem`,
                     width: `128px`,
@@ -33,7 +34,7 @@ class ArtistPage extends Component {
                   }}
                 >
                   <Link
-                    to={`/artists/` + node.slug}
+                    to={`/artists/` + artist.slug}
                     style={{
                       textDecoration: `none`
                     }}
@@ -41,10 +42,10 @@ class ArtistPage extends Component {
                     <figure>
                       <img
                         src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${
-                          node.picture.handle
+                          artist.picture.handle
                         }`}
-                        alt={node.name}
-                        title={node.name}
+                        alt={artist.name}
+                        title={artist.name}
                         width="112"
                         style={{
                           marginBottom: `0`,
@@ -59,7 +60,7 @@ class ArtistPage extends Component {
                             marginTop: `0`
                           }}
                         >
-                          {node.name}
+                          {artist.name}
                         </h6>
                       </figcaption>
                     </figure>
@@ -69,27 +70,24 @@ class ArtistPage extends Component {
             </ul>
           </nav>
         </section>
-      </Layout>
-    );
-  }
-}
+      </div>
+      <BackToIndex />
+    </Layout>
+  );
+};
 
-export default ArtistPage;
-
-export const ArtistPageQuery = graphql`
+export const artistPageQuery = graphql`
   query getAllArtists {
-    artists: allArtist {
-      edges {
-        node {
+    vb {
+      artists: allArtists {
+        id
+        name
+        slug
+        picture {
           id
-          name
-          slug
-          picture {
-            id
-            handle
-            width
-            height
-          }
+          handle
+          width
+          height
         }
       }
     }

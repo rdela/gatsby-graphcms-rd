@@ -1,17 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Source GraphCMS Example`
+    title: `Vinylbase ❤️ Gatsby + GraphQL + GraphCMS`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-graphcms`,
+      resolve: `gatsby-source-graphql`,
       options: {
-        endpoint: `https://api.graphcms.com/simple/v1/vinylbase`,
-        query: require("./gatsby/configQuery")
+        // This type will contain remote schema Query type
+        typeName: "Vinylbase",
+        // This is field under which it's accessible
+        fieldName: "vb",
+        // URL to query from
+        url: "https://api.graphcms.com/simple/v1/vinylbase"
       }
     },
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

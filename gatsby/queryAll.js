@@ -1,74 +1,62 @@
-'use strict'
-
 module.exports = `
   {
-    allArtist {
-      edges {
-        artist: node {
+    vb {
+      allArtists {
+        id
+        name
+        slug
+        picture {
           id
-          name
+          handle
+          width
+          height
+        }
+        records {
+          id
           slug
-          picture {
-            id
-            handle
-            width
-            height
-          }
-          records {
-            id
-            slug
-            title
-          }
+          title
         }
       }
-    }
-    allRecord {
-      edges {
-        record: node {
+      allRecords {
+        id
+        slug
+        title
+        artist {
           id
+          slug
+          name
+        }
+        tracks {
+          id
+          title
+          length
+        }
+        cover {
+          handle
+        }
+        reviews {
+          id
+          slug
+          title
+        }
+      }
+      allReviews {
+        id
+        slug
+        createdAt
+        record {
           slug
           title
           artist {
-            id
             slug
             name
           }
-          tracks {
-            id
-            title
-            aliasedLength
-          }
-          cover {
-            handle
-          }
-          reviews {
-            id
-            slug
-            title
-          }
         }
-      }
-    }
-    allReview {
-      edges {
-        review: node {
-          id
-          slug
-          createdAt
-          record {
-            slug
-            title
-            artist {
-              slug
-              name
-            }
-          }
-          title
-          review
-          rating
-          comments {
-            body
-          }
+        title
+        review
+        rating
+        comments {
+          body
         }
       }
     }

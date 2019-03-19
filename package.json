@@ -1,51 +1,54 @@
 {
-  "version": "2.0.0",
-  "name": "gatsby-graphcms-example",
+  "name": "gatsby-graphcms-rd",
   "description": "Gatsby example site using the GraphCMS source plugin",
-  "keywords": [
-    "data",
-    "example",
-    "gatsby",
-    "graphcms",
-    "graphql",
-    "source"
-  ],
-  "homepage": "https://github.com/GraphCMS/gatsby-graphcms-example",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GraphCMS/gatsby-graphcms-example.git"
-  },
-  "license": "MIT",
+  "version": "3.0.0",
   "contributors": [
     "Rafael Cordones <rafael@cordones.me>",
     "Hugo Meissner <hugomeissner@icloud.com>",
     "Angel Piscola <angelpiscola@gmail.com>",
     "Ricky de Laveaga (https://rdela.com)"
   ],
-  "dependencies": {
-    "gatsby": "2.1.38",
-    "gatsby-link": "2.0.16",
-    "gatsby-plugin-manifest": "2.0.24",
-    "gatsby-plugin-offline": "2.0.25",
-    "gatsby-plugin-react-helmet": "3.0.10",
-    "gatsby-source-graphcms": "1.0.0-alpha.3",
-    "gatsby-transformer-remark": "2.3.5",
-    "react": "16.8.4",
-    "react-dom": "16.8.4",
-    "react-helmet": "5.2.0",
-    "react-star-rating-component": "1.4.1"
-  },
+  "license": "SEE LICENSE IN license.txt",
+  "private": true,
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier-eslint --write \"src/**/*.js\" \"gatsby-*.js\"",
-    "lint": "npm run format",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/rdela/gatsby-graphcms-rd/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdela/gatsby-graphcms-rd.git"
+  },
+  "homepage": "https://github.com/rdela/gatsby-graphcms-rd",
+  "dependencies": {
+    "gatsby": "2.1.38",
+    "gatsby-link": "2.0.16",
+    "gatsby-plugin-manifest": "2.0.24",
+    "gatsby-plugin-netlify": "2.0.13",
+    "gatsby-plugin-offline": "2.0.25",
+    "gatsby-plugin-react-helmet": "3.0.10",
+    "gatsby-source-graphql": "2.0.15",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "react-helmet": "5.2.0",
+    "react-markdown": "4.0.6",
+    "react-star-rating-component": "1.4.1"
   },
   "devDependencies": {
     "prettier-eslint": "8.8.2",
     "prettier-eslint-cli": "4.7.1"
   },
+  "keywords": [
+    "example",
+    "gatsby",
+    "graphcms",
+    "graphql",
+    "source"
+  ],
   "renovate": {
     "extends": [
       "config:base"
