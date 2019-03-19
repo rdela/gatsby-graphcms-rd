@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Source GraphCMS Example`,
-        short_name: `Gatsby + GraphCMS`,
+        name: `Vinylbase ❤️ Gatsby + GraphQL + GraphCMS`,
+        short_name: `Vinylbase`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#61045f`,
