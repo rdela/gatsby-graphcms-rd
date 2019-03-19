@@ -13,9 +13,9 @@ export default ({ data }) => {
       <div style={{ marginBottom: `5rem` }}>
         <section className="intro">
           <p>
-            Welcome to the Vinylbase{` `}
+            Welcome to the{` `}
             <a href="https://github.com/rdela/gatsby-graphcms-rd">
-              Gatsby example site
+              Vinylbase Gatsby example site
             </a>
             {` `}using{` `}
             <a href="https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql">
