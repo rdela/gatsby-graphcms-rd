@@ -32,8 +32,8 @@
     "gatsby-plugin-offline": "2.0.25",
     "gatsby-plugin-react-helmet": "3.0.10",
     "gatsby-source-graphql": "2.0.15",
-    "react": "16.8.4",
-    "react-dom": "16.8.4",
+    "react": "16.8.5",
+    "react-dom": "16.8.5",
     "react-helmet": "5.2.0",
     "react-markdown": "4.0.6",
     "react-star-rating-component": "1.4.1"
