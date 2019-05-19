@@ -23,7 +23,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#61045f`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icons: [
           {
             src: `/favicons/chrome-192.png`,

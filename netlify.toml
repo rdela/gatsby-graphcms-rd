@@ -8,4 +8,4 @@
   NPM_VERSION = "6.9.0"
   RUBY_VERSION = "default"
   YARN_FLAGS = "--no-ignore-optional"
-  YARN_VERSION = "1.15.2"
+  YARN_VERSION = "1.16.0"
