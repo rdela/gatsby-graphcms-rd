@@ -1,7 +1,7 @@
 {
   "name": "gatsby-graphcms-rd",
   "description": "Gatsby example site using the GraphCMS source plugin",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "contributors": [
     "Rafael Cordones <rafael@cordones.me>",
     "Hugo Meissner <hugomeissner@icloud.com>",
@@ -42,13 +42,6 @@
     "prettier-eslint": "9.0.0",
     "prettier-eslint-cli": "5.0.0"
   },
-  "keywords": [
-    "example",
-    "gatsby",
-    "graphcms",
-    "graphql",
-    "source"
-  ],
   "renovate": {
     "assignees": [
       "rdela"
