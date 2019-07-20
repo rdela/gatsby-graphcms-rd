@@ -50,23 +50,15 @@
     "source"
   ],
   "renovate": {
+    "assignees": [
+      "rdela"
+    ],
+    "automerge": true,
     "extends": [
       "config:base"
     ],
     "labels": [
       "renovate"
-    ],
-    "assignees": [
-      "rdela"
-    ],
-    "devDependencies": {
-      "schedule": [
-        "on the first day of the month"
-      ],
-      "automerge": true,
-      "major": {
-        "automerge": false
-      }
-    }
+    ]
   }
 }
