@@ -4837,7 +4837,7 @@ gatsby-cli@^2.7.53:
     ink "^2.4.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.10, gatsby-core-utils@^1.0.12:
+gatsby-core-utils@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.12.tgz#72f38677b9894d701b55f12b0c443a72274ae1c6"
   integrity sha512-Ryh0ILzG6zuYA88irnFQPKGe0NwEBh30FqAp7KNyYgsiOB41CSD0JfjIlFUgkU/gAoLlZKXyeFwbq3SVEBwNoA==
@@ -4849,16 +4849,7 @@ gatsby-graphiql-explorer@^0.2.21:
   dependencies:
     "@babel/runtime" "^7.6.2"
 
-gatsby-link@2.2.15:
-  version "2.2.15"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.15.tgz#ef3fa6628f5738e45cfca03bb91b2cbb20df1eb7"
-  integrity sha512-EeL5c+iFbXrVJ/xzbkvaiuLcLPt2FFJ5cTiBx1KV2abe1U8vCeQgBjMfc5rABSyOV8nUx5js468LGvaLkmgJdA==
-  dependencies:
-    "@babel/runtime" "^7.6.0"
-    "@types/reach__router" "^1.2.5"
-    prop-types "^15.7.2"
-
-gatsby-link@^2.2.17:
+gatsby-link@2.2.17, gatsby-link@^2.2.17:
   version "2.2.17"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.17.tgz#60a96418d370b46df1ddff8b8ccc32c2e57426ae"
   integrity sha512-6fLICNl0SRt2hJIU8XhEbYVAg143C0jkI6IzL18YbhY/x8M0nZMqZpSVMfnS+pAPKffon9jBraUFIlEaZlf5Bw==
