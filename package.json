@@ -31,7 +31,7 @@
     "gatsby-plugin-netlify": "2.1.22",
     "gatsby-plugin-offline": "3.0.17",
     "gatsby-plugin-react-helmet": "3.1.13",
-    "gatsby-source-graphql": "2.1.20",
+    "gatsby-source-graphql": "2.1.21",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-helmet": "5.2.1",
