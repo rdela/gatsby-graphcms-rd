@@ -4858,12 +4858,12 @@ gatsby-react-router-scroll@^2.1.14:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
-gatsby-source-graphql@2.1.21:
-  version "2.1.21"
-  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.1.21.tgz#26db942ce791a4c66bc2c5f0362f97f5e63842ec"
-  integrity sha512-LjEK9Uw7sGgp/tPSdF1kHw1a54NlGfRR5XaODQLgeemNzUxIzrR/JuNJt5Db7Ce8zMgHFkeVSNDuXtG6S7vKrA==
+gatsby-source-graphql@2.1.22:
+  version "2.1.22"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.1.22.tgz#2e7741f7ae28d97da425c7d3029cf26b3eac9b1d"
+  integrity sha512-V8tzmZ63/kU00F7555HzlPUhH4LLwGC4uYudrZ+CxwSbzvwHaH2QCiDtUucPqk8+DFvuYjR55U2U0IYVyho95Q==
   dependencies:
-    "@babel/runtime" "^7.6.3"
+    "@babel/runtime" "^7.7.2"
     apollo-link "1.2.13"
     apollo-link-http "^1.5.16"
     graphql-tools "^3.1.1"
