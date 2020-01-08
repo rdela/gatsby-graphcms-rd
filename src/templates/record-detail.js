@@ -1,10 +1,10 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
 
-import Layout from "../components/layout";
+import Layout from '../components/layout'
 
 export default ({ data }) => {
-  const record = data.vb.Record;
+  const record = data.vb.Record
   return (
     <Layout>
       <h1 id={record.slug}>{record.title}</h1>
@@ -19,9 +19,7 @@ export default ({ data }) => {
       )}
       <figure style={{ marginBottom: `1rem` }}>
         <img
-          src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:crop/${
-            record.cover.handle
-          }`}
+          src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:crop/${record.cover.handle}`}
           alt={record.name}
           title={record.name}
           width="256"
@@ -47,7 +45,7 @@ export default ({ data }) => {
           style={{
             marginBottom: `1.5rem`,
             marginTop: `3rem`,
-            textTransform: `uppercase`
+            textTransform: `uppercase`,
           }}
         >
           Reviews
@@ -57,7 +55,7 @@ export default ({ data }) => {
         <div
           key={review.id}
           style={{
-            marginBottom: `2.5rem`
+            marginBottom: `2.5rem`,
           }}
         >
           <p>
@@ -76,14 +74,14 @@ export default ({ data }) => {
         style={{
           marginBottom: `3rem`,
           marginTop: `2.5rem`,
-          textTransform: `uppercase`
+          textTransform: `uppercase`,
         }}
       >
         <Link to="/records">All Records</Link>
       </h4>
     </Layout>
-  );
-};
+  )
+}
 
 export const recordDetailPageQuery = graphql`
   query getRecordById($recordID: ID!) {
@@ -113,4 +111,4 @@ export const recordDetailPageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
 
-import Layout from "../components/layout";
-import BackToIndex from "../components/back-to-index";
+import Layout from '../components/layout'
+import BackToIndex from '../components/back-to-index'
 
 export default ({ data }) => {
-  const artists = data.vb.artists;
+  const artists = data.vb.artists
   return (
     <Layout>
       <div style={{ marginBottom: `5rem` }}>
@@ -20,7 +20,7 @@ export default ({ data }) => {
                 flexWrap: `wrap`,
                 alignItems: `center`,
                 justifyContent: `center`,
-                width: `100%`
+                width: `100%`,
               }}
             >
               {artists.map((artist, i) => (
@@ -30,26 +30,24 @@ export default ({ data }) => {
                     marginBottom: `0.5rem`,
                     width: `128px`,
 
-                    flexBasis: `128px`
+                    flexBasis: `128px`,
                   }}
                 >
                   <Link
                     to={`/artists/` + artist.slug}
                     style={{
-                      textDecoration: `none`
+                      textDecoration: `none`,
                     }}
                   >
                     <figure>
                       <img
-                        src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${
-                          artist.picture.handle
-                        }`}
+                        src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${artist.picture.handle}`}
                         alt={artist.name}
                         title={artist.name}
                         width="112"
                         style={{
                           marginBottom: `0`,
-                          marginTop: `0.125rem`
+                          marginTop: `0.125rem`,
                         }}
                       />
                       <figcaption>
@@ -57,7 +55,7 @@ export default ({ data }) => {
                           style={{
                             fontSize: `0.5675rem`,
                             marginBottom: `0.125rem`,
-                            marginTop: `0`
+                            marginTop: `0`,
                           }}
                         >
                           {artist.name}
@@ -73,8 +71,8 @@ export default ({ data }) => {
       </div>
       <BackToIndex />
     </Layout>
-  );
-};
+  )
+}
 
 export const artistPageQuery = graphql`
   query getAllArtists {
@@ -92,4 +90,4 @@ export const artistPageQuery = graphql`
       }
     }
   }
-`;
+`

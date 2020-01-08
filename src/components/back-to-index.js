@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
 const BackToIndex = () => (
   <div
@@ -7,7 +7,7 @@ const BackToIndex = () => (
       margin: `0 auto 1.45rem`,
       maxWidth: 960,
       padding: `1.45rem 1.0875rem`,
-      textAlign: `center`
+      textAlign: `center`,
     }}
   >
     <nav>
@@ -16,6 +16,6 @@ const BackToIndex = () => (
       </h4>
     </nav>
   </div>
-);
+)
 
-export default BackToIndex;
+export default BackToIndex

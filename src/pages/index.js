@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
 
-import Layout from "../components/layout";
-import StarRatingComponent from "react-star-rating-component";
+import Layout from '../components/layout'
+import StarRatingComponent from 'react-star-rating-component'
 
 export default ({ data }) => {
-  const artists = data.vb.artists;
-  const records = data.vb.records;
-  const reviews = data.vb.reviews;
+  const artists = data.vb.artists
+  const records = data.vb.records
+  const reviews = data.vb.reviews
   return (
     <Layout>
       <div style={{ marginBottom: `5rem` }}>
@@ -38,7 +38,7 @@ export default ({ data }) => {
                 flexWrap: `wrap`,
                 alignItems: `center`,
                 justifyContent: `center`,
-                width: `100%`
+                width: `100%`,
               }}
             >
               {artists.map((artist, i) => (
@@ -47,26 +47,24 @@ export default ({ data }) => {
                   style={{
                     marginBottom: `0.5rem`,
                     width: `128px`,
-                    flexBasis: `128px`
+                    flexBasis: `128px`,
                   }}
                 >
                   <Link
                     to={`/artists/` + artist.slug}
                     style={{
-                      textDecoration: `none`
+                      textDecoration: `none`,
                     }}
                   >
                     <figure>
                       <img
-                        src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${
-                          artist.picture.handle
-                        }`}
+                        src={`https://media.graphcms.com/resize=w:224,h:224,a:top,fit:crop/${artist.picture.handle}`}
                         alt={artist.name}
                         title={artist.name}
                         width="112"
                         style={{
                           marginBottom: `0`,
-                          marginTop: `0.125rem`
+                          marginTop: `0.125rem`,
                         }}
                       />
                       <figcaption>
@@ -74,7 +72,7 @@ export default ({ data }) => {
                           style={{
                             marginBottom: `0.125rem`,
                             marginTop: `0`,
-                            fontSize: `0.5675rem`
+                            fontSize: `0.5675rem`,
                           }}
                         >
                           {artist.name}
@@ -100,7 +98,7 @@ export default ({ data }) => {
                 flexWrap: `wrap`,
                 alignItems: `center`,
                 justifyContent: `center`,
-                width: `100%`
+                width: `100%`,
               }}
             >
               {records.map((record, i) => (
@@ -109,26 +107,24 @@ export default ({ data }) => {
                   style={{
                     marginBottom: `0.5rem`,
                     width: `128px`,
-                    flexBasis: `128px`
+                    flexBasis: `128px`,
                   }}
                 >
                   <Link
                     to={`/records/` + record.slug}
                     style={{
-                      textDecoration: `none`
+                      textDecoration: `none`,
                     }}
                   >
                     <figure>
                       <img
-                        src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:crop/${
-                          record.cover.handle
-                        }`}
+                        src={`https://media.graphcms.com/resize=w:512,h:512,a:top,fit:crop/${record.cover.handle}`}
                         alt={record.title}
                         title={record.title}
                         width="112"
                         style={{
                           marginBottom: `0`,
-                          marginTop: `0.125rem`
+                          marginTop: `0.125rem`,
                         }}
                       />
                       <figcaption>
@@ -136,7 +132,7 @@ export default ({ data }) => {
                           style={{
                             marginBottom: `0.125rem`,
                             marginTop: `0`,
-                            fontSize: `0.5675rem`
+                            fontSize: `0.5675rem`,
                           }}
                         >
                           {record.title}
@@ -161,19 +157,19 @@ export default ({ data }) => {
                 <li
                   key={i}
                   style={{
-                    marginBottom: `2rem`
+                    marginBottom: `2rem`,
                   }}
                 >
                   <h3
                     style={{
                       marginBottom: `0.125rem`,
-                      marginTop: `0`
+                      marginTop: `0`,
                     }}
                   >
                     <Link
                       to={`/reviews/` + review.slug}
                       style={{
-                        textDecoration: `none`
+                        textDecoration: `none`,
                       }}
                     >
                       {review.title}
@@ -181,7 +177,7 @@ export default ({ data }) => {
                   </h3>
 
                   <p>
-                    for{" "}
+                    for{' '}
                     <Link to={`/records/${review.record.slug}`}>
                       <em>{review.record.title}</em>
                     </Link>
@@ -213,8 +209,8 @@ export default ({ data }) => {
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 export const indexPageQuery = graphql`
   query getAllArtistsRecordsReviews {
@@ -279,4 +275,4 @@ export const indexPageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,12 +1,12 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
-import StarRatingComponent from "react-star-rating-component";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import StarRatingComponent from 'react-star-rating-component'
 
-import Layout from "../components/layout";
-import BackToIndex from "../components/back-to-index";
+import Layout from '../components/layout'
+import BackToIndex from '../components/back-to-index'
 
 export default ({ data }) => {
-  const reviews = data.vb.reviews;
+  const reviews = data.vb.reviews
   return (
     <Layout>
       <section className="reviews">
@@ -17,19 +17,19 @@ export default ({ data }) => {
               <li
                 key={i}
                 style={{
-                  marginBottom: `2rem`
+                  marginBottom: `2rem`,
                 }}
               >
                 <h3
                   style={{
                     marginBottom: `0.125rem`,
-                    marginTop: `0`
+                    marginTop: `0`,
                   }}
                 >
                   <Link
                     to={`/reviews/` + node.slug}
                     style={{
-                      textDecoration: `none`
+                      textDecoration: `none`,
                     }}
                   >
                     {node.title}
@@ -37,7 +37,7 @@ export default ({ data }) => {
                 </h3>
 
                 <p>
-                  for{" "}
+                  for{' '}
                   <Link to={`/records/${node.record.slug}`}>
                     <em>{node.record.title}</em>
                   </Link>
@@ -69,8 +69,8 @@ export default ({ data }) => {
       </section>
       <BackToIndex />
     </Layout>
-  );
-};
+  )
+}
 
 export const reviewPageQuery = graphql`
   query getAllReviews {
@@ -92,4 +92,4 @@ export const reviewPageQuery = graphql`
       }
     }
   }
-`;
+`

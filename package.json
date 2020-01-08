@@ -13,8 +13,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier-eslint --write \"src/**/*.js\" \"gatsby-*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier-eslint --write \"$(pwd)/src/**/*.js\" \"$(pwd)/gatsby-*.js\"",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/rdela/gatsby-graphcms-rd/issues"
@@ -39,6 +39,12 @@
     "react-star-rating-component": "1.4.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.26",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "prettier-eslint": "9.0.0",
     "prettier-eslint-cli": "5.0.0"
   },

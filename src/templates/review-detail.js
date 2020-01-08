@@ -1,19 +1,19 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
-import Markdown from "react-markdown";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Markdown from 'react-markdown'
 
-import Layout from "../components/layout";
-import StarRatingComponent from "react-star-rating-component";
+import Layout from '../components/layout'
+import StarRatingComponent from 'react-star-rating-component'
 
 export default ({ data }) => {
-  const review = data.vb.Review;
+  const review = data.vb.Review
   return (
     <Layout>
       <div style={{ marginBottom: `4rem` }}>
         <article key={review.id} style={{ marginBottom: `3rem` }}>
           <h1 id={review.slug}>{review.title}</h1>
           <p>
-            for{" "}
+            for{' '}
             <Link to={`/records/${review.record.slug}`}>
               <em>{review.record.title}</em>
             </Link>
@@ -56,15 +56,15 @@ export default ({ data }) => {
           style={{
             marginBottom: `3rem`,
             marginTop: `2.5rem`,
-            textTransform: `uppercase`
+            textTransform: `uppercase`,
           }}
         >
           <Link to="/reviews">All Reviews</Link>
         </h4>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 export const reviewDetailPageQuery = graphql`
   query getReviewById($reviewID: ID!) {
@@ -90,4 +90,4 @@ export const reviewDetailPageQuery = graphql`
       }
     }
   }
-`;
+`
