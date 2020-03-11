@@ -42,7 +42,7 @@
     "@testing-library/jest-dom": "5.1.1",
     "@testing-library/react": "9.5.0",
     "babel-jest": "25.1.0",
-    "babel-preset-gatsby": "0.2.34",
+    "babel-preset-gatsby": "0.2.35",
     "identity-obj-proxy": "3.0.0",
     "jest": "25.1.0",
     "prettier-eslint": "9.0.1",
