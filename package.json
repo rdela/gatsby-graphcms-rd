@@ -44,7 +44,7 @@
     "babel-jest": "25.5.1",
     "babel-preset-gatsby": "0.4.0",
     "identity-obj-proxy": "3.0.0",
-    "jest": "25.5.0",
+    "jest": "25.5.1",
     "prettier-eslint": "9.0.1",
     "prettier-eslint-cli": "5.0.0"
   },
