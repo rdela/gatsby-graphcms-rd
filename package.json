@@ -27,7 +27,7 @@
   "dependencies": {
     "gatsby": "2.23.3",
     "gatsby-link": "2.4.6",
-    "gatsby-plugin-manifest": "2.4.10",
+    "gatsby-plugin-manifest": "2.4.11",
     "gatsby-plugin-netlify": "2.3.5",
     "gatsby-plugin-offline": "3.2.9",
     "gatsby-plugin-react-helmet": "3.3.4",
