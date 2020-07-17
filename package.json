@@ -26,7 +26,7 @@
   "homepage": "https://github.com/rdela/gatsby-graphcms-rd",
   "dependencies": {
     "gatsby": "2.24.4",
-    "gatsby-link": "2.4.12",
+    "gatsby-link": "2.4.13",
     "gatsby-plugin-manifest": "2.4.18",
     "gatsby-plugin-netlify": "2.3.11",
     "gatsby-plugin-offline": "3.2.18",
