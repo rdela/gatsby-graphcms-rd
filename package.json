@@ -29,7 +29,7 @@
     "gatsby-link": "2.4.15",
     "gatsby-plugin-manifest": "2.4.34",
     "gatsby-plugin-netlify": "2.3.19",
-    "gatsby-plugin-offline": "3.2.32",
+    "gatsby-plugin-offline": "3.2.33",
     "gatsby-plugin-react-helmet": "3.3.14",
     "gatsby-source-graphql": "2.7.6",
     "react": "16.14.0",
