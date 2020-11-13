@@ -39,7 +39,7 @@
     "react-star-rating-component": "1.4.1"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "5.11.5",
+    "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.1.2",
     "babel-jest": "26.6.3",
     "babel-preset-gatsby": "0.5.1",
