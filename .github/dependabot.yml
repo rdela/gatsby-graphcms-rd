@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "17:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: gatsby-plugin-netlify
+    versions:
+    - 3.0.0
+  commit-message:
+    prefix: chore
+    include: scope
