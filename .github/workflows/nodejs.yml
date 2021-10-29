@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js 12
+    - name: Use Node.js current LTS
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: 'lts/*'
     - name: yarn install and test
       run: |
         yarn install
